@@ -18,7 +18,8 @@
     "polymer": "Polymer/polymer#^1.6.0",
     "paper-slider": "PolymerElements/paper-slider#^1.0.13",
     "paper-card": "PolymerElements/paper-card#^1.1.4",
-    "iron-icons": "PolymerElements/iron-icons#^1.2.0"
+    "iron-icons": "PolymerElements/iron-icons#^1.2.0",
+    "neon-animation": "PolymerElements/neon-animation#^1.2.4"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"

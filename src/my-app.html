@@ -34,10 +34,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       app-header {
         color: #fff;
-        background-color: var(--app-primary-color);
+        background-color: #C03A39;
       }
+
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
+      }
+
+      .logo{
+        width: 60px;
+        height: 60px;
+        background: url(https://cdn-images-1.medium.com/fit/c/200/200/1*snrU5LbDliFNfGdBpzew7A.jpeg);
+        background-size: cover;
+        visibility:visible;
       }
 
       .drawer-list {
@@ -56,6 +65,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: black;
         font-weight: bold;
       }
+
+      .mobile-button{
+        visibility:collapse;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .mobile-button{
+          visibility:visible;
+        }
+        .logo{
+          display:none;
+        }
+      }
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -65,7 +87,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
 
-    <app-drawer-layout fullbleed>
+    <app-drawer-layout fullbleed force-narrow>
       <!-- Drawer content -->
       <app-drawer id="drawer">
         <app-toolbar>Menu</app-toolbar>
@@ -82,8 +104,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
-            <paper-icon-button icon="my-icons:menu" drawer-toggle force-narrow></paper-icon-button>
-            <div main-title>My App</div>
+            <div class="logo"></div>
+            <paper-icon-button class="mobile-button" icon="my-icons:menu" onclick="drawer.toggle()"></paper-icon-button>
             <iron-selector selected="[[page]]" attr-for-selected="name" class="toolbar-list" role="navigation">
               <a name="view1" href="/view1">View One</a>
               <a name="view2" href="/view2">View Two</a>
