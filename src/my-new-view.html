@@ -1,0 +1,38 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../bower_components/app-layout/app-grid/app-grid-style.html">
+
+<dom-module id="my-new-view">
+  <!-- Defines the element's style and local DOM -->
+  <template>
+    <style include="app-grid-style">
+      :host {
+        --app-grid-columns: 3;
+        /* 50% the width of the item is equivalent to 2:1 aspect ratio*/
+        --app-grid-item-height: 50%;
+      }
+
+      .item {
+        background-color: white;
+      }
+    </style>
+    <ul class="app-grid" has-aspect-ratio>
+      <li class="item">
+        <div>item 1</div>
+      </li>
+      <li class="item">
+        <div>item 2</div>
+      </li>
+      <li class="item">
+        <div>item 3</div>
+      </li>
+    </ul>
+  </template>
+
+  <!-- Creates the element's prototype and registers it -->
+  <script>
+    Polymer({
+      is: 'my-new-view'
+    });
+  </script>
+</dom-module>

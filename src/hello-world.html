@@ -1,0 +1,127 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+<dom-module id="hello-world">
+
+  <style>
+  paper-card {
+      --paper-card-header-color: white;
+      min-width: 250px;
+      margin-left: 25px;
+      height: 350px;
+      border-radius: 5px;
+      background: linear-gradient(rgba(192,58,57,0.30),rgba(192,58,57,0.30)),url(https://d13yacurqjgara.cloudfront.net/users/41854/screenshots/1835511/matmi-social.png);
+      background-size: cover;
+      font-family: 'Source Sans Pro', sans-serif;
+      color: white;
+  }
+  .card-footer{
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height: 145px;
+    background: linear-gradient(rgba(192,58,57,0.60),rgba(192,58,57,0.60));
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+  }
+  .card-footer-title{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    font-size: 20pt;
+  }
+  .card-header{
+    position: absolute;
+    top: 17px;
+    width:100%;
+    height:36px;
+  }
+  .card-header-button{
+    float: right;
+    height:36px;
+    width:36px;
+    border-top-left-radius:18px;
+    border-bottom-left-radius:18px;
+    background: linear-gradient(rgba(255,153,71,1),rgba(255,153,71,1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-header-button-icon{
+    align-self: center;
+  }
+  .card-header-label-icon{
+    float: left;
+    display: flex;
+    height:36px;
+    margin-left: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-header-label-content{
+    float: left;
+    display: flex;
+    height:36px;
+    margin-left: 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 10pt;
+  }
+  a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
+  </style>
+  <template>
+
+  <paper-card>
+    <div class="card-header">
+      <div class="card-header-label-icon">
+        <iron-icon icon="icons:star"></iron-icon>
+      </div>
+      <div class="card-header-label-content">
+        Find out more
+      </div>
+      <a href="http://www.google.com">
+        <div class="card-header-button">
+          <div class="class-header-button-icon">
+            <iron-icon icon="icons:arrow-forward"></iron-icon>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card-footer">
+      <div class="card-content">
+        <div class="card-footer-title">Coherance</div>
+        A design and delivery framework for modern times.
+      </div>
+    </div>
+  </paper-card>
+
+</template>
+
+</dom-module>
+
+<script>
+  Polymer ({
+     is: "hello-world",
+     properties: {
+      firstName: {
+        type:String,
+        value:"First Name"
+      },
+      lastName: {
+        type:String,
+        value:"Last Name"
+      },
+      fullName: {
+        type:String,
+        computed:'computeFullName(firstName, lastName)'
+      }
+    },
+    computeFullName: function(firsName, lastName){
+      return firsName + ' ' + lastName
+    }
+  });
+</script>
