@@ -9,11 +9,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="hello-world.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-query.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-document.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-database-script.html">
+<link rel="import" href="marketing-card-product.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view1">
   <template>
+
+    <!-- <firebase-query
+      id="query"
+      path="/cards"
+      data="{{cards}}">
+    </firebase-query> -->
+
+    <firebase-document
+    path="/cards"
+    data="{{cards}}">
+   </firebase-document>
+
     <style include="shared-styles">
       :host {
         display: block;
@@ -28,13 +45,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
     </div>
 
-    <marketing-card-product first-name="Tom" last-name="O'Beirne"></marketing-card-product>
+
+      <div>
+        <template is="dom-repeat" items="[[cards]]" as="card">
+          <marketing-card-product
+            header-Label="[[card]]"
+            header-Url="[[card]]"
+            footer-Heading="[[card]]"
+            footer-Content="[[card]]">
+          </marketing-card-product>
+        </template>
+      </div>
+
 
   </template>
 
   <script>
     Polymer({
       is: 'my-view1',
+      properties:{
+        cards:{
+          type: Object
+        }
+      }
     });
   </script>
 </dom-module>

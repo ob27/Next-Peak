@@ -3,6 +3,7 @@
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
+
 <dom-module id="marketing-card-product">
 
   <style>
@@ -81,9 +82,9 @@
         <iron-icon icon="icons:star"></iron-icon>
       </div>
       <div class="card-header-label-content">
-        Find out more
+        [[headerLabel]]
       </div>
-      <a href="http://www.google.com">
+      <a href="[[headerUrl]]">
         <div class="card-header-button">
           <div class="class-header-button-icon">
             <iron-icon icon="icons:arrow-forward"></iron-icon>
@@ -93,8 +94,8 @@
     </div>
     <div class="card-footer">
       <div class="card-content">
-        <div class="card-footer-title">Coherance</div>
-        A design and delivery framework for modern times.
+        <div class="card-footer-title">[[footerHeading]]</div>
+        [[footerContent]]
       </div>
     </div>
   </paper-card>
@@ -105,19 +106,23 @@
 
 <script>
   Polymer ({
-     is: "hello-world",
+     is: "marketing-card-product",
      properties: {
-      firstName: {
+      headerLabel: {
         type:String,
-        value:"First Name"
+        value:"Find out more"
       },
-      lastName: {
+      headerUrl: {
         type:String,
-        value:"Last Name"
+        value:"http://www.google.com"
       },
-      fullName: {
+      footerHeading: {
         type:String,
-        computed:'computeFullName(firstName, lastName)'
+        value:"Coherance"
+      },
+      footerContent: {
+        type:String,
+        value:"A design and delivery framework for modern times."
       }
     },
     computeFullName: function(firsName, lastName){
