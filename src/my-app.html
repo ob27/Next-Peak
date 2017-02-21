@@ -20,23 +20,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
-<link rel="import" href="../bower_components/polymerfire/firebase-app-script.html">
-<link rel="import" href="../bower_components/polymerfire/firebase-query.html">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <link rel="import" href="my-app-logo.html">
 <link rel="import" href="my-icons.html">
 
 <dom-module id="my-app">
   <template>
-
-    <firebase-app
-       id="firebase"
-       auth-domain="next-peak.firebaseapp.com"
-       database-url="https://next-peak.firebaseio.com"
-       api-key="AIzaSyBbQxlZlDY-l6VOhHEKFQoQvSBlgz57PVs">
-    </firebase-app>
-
+    
     <style>
       :host {
         --app-primary-color: #4285f4;
@@ -92,7 +82,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
 
-    <app-drawer-layout fullbleed force-narrow>
+    <app-drawer-layout fullbleed >
       <!-- Drawer content -->
       <app-drawer id="drawer">
         <app-toolbar>Menu</app-toolbar>
